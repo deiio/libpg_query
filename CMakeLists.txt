@@ -3,6 +3,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 PROJECT(pg_query CXX C)
 
 FILE(GLOB pg_query_srcs ${CMAKE_CURRENT_SOURCE_DIR}/src/*.c ${CMAKE_CURRENT_SOURCE_DIR}/src/postgres/*.c)
+LIST(APPEND pg_query_srcs vendor/protobuf-c/protobuf-c.c vendor/xxhash/xxhash.c protobuf/pg_query.pb-c.c)
 
 INCLUDE_DIRECTORIES(.)
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/src/include)
